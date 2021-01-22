@@ -1,5 +1,9 @@
-const HelloWorld = artifacts.require("./HelloWorld.sol");
+//Can change names later on
+//Can edit files for more specifics later
+
+const AmbulanceBounties = artifacts.require("./AmbulanceBounties.sol");
 
 module.exports = function(deployer) {
-   deployer.deploy(HelloWorld);
+
+        deployer.deploy(AmbulanceBounties);
 };

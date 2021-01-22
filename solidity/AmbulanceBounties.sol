@@ -1,4 +1,5 @@
-pragma solidity >=0.5.0 <0.9.0;
+pragma solidity ^0.7.0;
+
 // SPDX-License-Identifier: UNLICENSED
 
 contract AmbulanceBounties {
@@ -53,25 +54,28 @@ contract AmbulanceBounties {
     // Note: We maintain an array so that we can see all bounties, and a mapping for fast bounty information lookup
     // The string is the "ID" of the bounty, and the Bounty object is the actual object. Together, these two data structures form something like a Set data structure.
     string[] public bounties;
-    mapping(string => Bounty) bountyMapping;
+    mapping(string => Bounty) public bountyMapping;
     
-    
-    constructor(address[] memory a, address[] memory p, address[] memory h) {
+    constructor() {
         admin = msg.sender;
-        
-        for (uint i = 0; i < a.length; i++) {
-            ambulances[a[i]] = true;
-        }
-        
-        for (uint i = 0; i < p.length; i++) {
-            policeStations[p[i]] = true;
-        }
-        
-        for (uint i = 0; i < h.length; i++) {
-            hospitals[h[i]] = true;
-        }
-        
     }
+    
+    // constructor(address[] memory a, address[] memory p, address[] memory h) {
+    //     admin = msg.sender;
+        
+    //     for (uint i = 0; i < a.length; i++) {
+    //         ambulances[a[i]] = true;
+    //     }
+        
+    //     for (uint i = 0; i < p.length; i++) {
+    //         policeStations[p[i]] = true;
+    //     }
+        
+    //     for (uint i = 0; i < h.length; i++) {
+    //         hospitals[h[i]] = true;
+    //     }
+        
+    // }
     
     // timeLimit is how long the ambulances have to deliver the patient, not including bid and reveal times.
     function postBounty (string memory hash, uint timeLimit, string memory location, address[] memory allowedHospitals, uint penalty) public payable  {

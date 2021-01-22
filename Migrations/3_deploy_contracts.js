@@ -1,5 +1,5 @@
-const MD5SmartContract = artifacts.require("./MD5SmartContract.sol");
+const SimpleStorage = artifacts.require("SimpleStorage");
 
 module.exports = function(deployer) {
-   deployer.deploy(MD5SmartContract);
+  deployer.deploy(SimpleStorage);
 };

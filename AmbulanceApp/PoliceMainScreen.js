@@ -32,10 +32,15 @@ class PoliceMainScreen extends React.Component {
                 <ScrollView>
                     {DATA.map((item, index) => (
                         <ListItem key={index} bottomDivider>
+                        <Icon
+                            name='user'
+                            type='evilicon'
+                            size={50}
+                        />
                             <ListItem.Content>
                                 <ListItem.Title>{item.id}</ListItem.Title>
                             </ListItem.Content>
-                            <Button title="Solid Button" onPress={() => this.props.navigation.navigate('Police Detailed Page', {id: item.id})}/>
+                            <Button title="Button" onPress={() => this.props.navigation.navigate('Police Detailed Page', {id: item.id})}/>
                         </ListItem>
                     ))}
                 </ScrollView>

@@ -13,6 +13,7 @@ class PoliceDetailedScreen extends Component    {
     render()    {
         return  (
             <View>
+                <Text>Status: {this.props.route.params.id}</Text>
                 <Text>{this.props.route.params.id}</Text>
             </View>
         )

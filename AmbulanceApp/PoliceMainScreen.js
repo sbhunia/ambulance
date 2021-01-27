@@ -32,7 +32,6 @@ class PoliceMainScreen extends React.Component {
                 <ScrollView>
                     {DATA.map((item, index) => (
                         <ListItem key={index} bottomDivider>
-                            <Icon  name='rowing' />
                             <ListItem.Content>
                                 <ListItem.Title>{item.id}</ListItem.Title>
                             </ListItem.Content>

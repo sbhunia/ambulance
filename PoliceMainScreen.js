@@ -8,7 +8,7 @@ const Stack = createStackNavigator();
 
 const DATA = [
     {
-        id: 'Patient 1',
+        id: 'Patient 2',
         title: 'First Item',
     }
 ];

@@ -1,8 +1,9 @@
 import React, { Component } from 'react';
-import { Text, ScrollView, View, StyleSheet } from 'react-native';
-import { Input, Button, Overlay } from 'react-native-elements';
+import { Text, View, Image, StyleSheet } from 'react-native';
+import { Input, Button, Overlay, Card } from 'react-native-elements';
 import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
+import { ScrollView } from 'react-native-gesture-handler';
 
 const email = "khoa";
 const password = "123";
@@ -27,7 +28,7 @@ class PoliceLoginScreen extends Component {
         }
     }
 
-    handleOverLay = ()  =>  {
+    handleOverLay = () => {
         this.setState({
             overlayVisible: false
         })
@@ -35,37 +36,51 @@ class PoliceLoginScreen extends Component {
 
     render() {
         return (
-            <ScrollView>
-                <Overlay isVisible={this.state.overlayVisible} onBackdropPress={this.handleOverLay}>
-                    <Text>Wrong Login Information</Text>
-                </Overlay>
-                
-                <View>
-                    <Text>Email</Text>
-                    <Input
-                        placeholder="Email"
-                        leftIcon={{ type: 'font-awesome', name: 'envelope' }}
-                        onChangeText={value => this.setState({ email: value })}
-                    />
-                </View>
-                <View>
-                    <Text>Password</Text>
-                    <Input
-                        placeholder="Password"
-                        leftIcon={{ type: 'font-awesome', name: 'lock' }}
-                        onChangeText={value => this.setState({ password: value })}
-                    />
-                </View>
+            <View style={{ flex: 1 }}>
+                <ScrollView>
+                    <Overlay isVisible={this.state.overlayVisible} onBackdropPress={this.handleOverLay}>
+                        <Text>Wrong Login Information</Text>
+                    </Overlay>
+                    <Card>
+                        <View>
+                            <Text>Email</Text>
+                            <Input
+                                placeholder="Email"
+                                leftIcon={{ type: 'font-awesome', name: 'envelope' }}
+                                onChangeText={value => this.setState({ email: value })}
+                            />
+                        </View>
 
-                <Button
-                    title="Login"
-                    onPress={this.handleLogin}
-                />
+                        <View>
+                            <Text>Password</Text>
+                            <Input
+                                placeholder="Password"
+                                leftIcon={{ type: 'font-awesome', name: 'lock' }}
+                                onChangeText={value => this.setState({ password: value })}
+                            />
+                        </View>
 
-            </ScrollView>
+                        <Button
+                            title="Login"
+                            onPress={this.handleLogin}
+                        />
+                    </Card>
+                </ScrollView>
+                <View>
+                    <Image source={require('./Logo.jpg')} alt="Logo" style={styles.image} />
+                    <Text>Made by Thomas Nguyen</Text>
+                </View>
+            </View>
         )
     }
 }
 
+const styles = StyleSheet.create({
+    image: {
+        width: 65,
+        height: 50,
+        margin: 20,
+    }
+});
 
 export default PoliceLoginScreen

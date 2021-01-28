@@ -50,6 +50,7 @@ class PoliceMainScreen extends React.Component {
         return (
             <SafeAreaView style={styles.container}>
                 <ScrollView>
+
                     <Card style={styles.card}>
                         <Card.Title>OPEN BID</Card.Title>
                         <Card.Divider />
@@ -66,6 +67,7 @@ class PoliceMainScreen extends React.Component {
                         </ListItem>
                     ))}
                     </Card>
+
                     <Card>
                         <Card.Title>ACCEPTED BID</Card.Title>
                         <Card.Divider />
@@ -99,6 +101,7 @@ class PoliceMainScreen extends React.Component {
                         </ListItem>
                     ))}
                     </Card>
+                    
                 </ScrollView>
             </SafeAreaView>
         );

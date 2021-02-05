@@ -7,6 +7,7 @@ import { ScrollView } from 'react-native-gesture-handler';
 
 const PoliceEmail = "police";
 const AmbulanceEmail = "ambulance";
+const HospitalEmail = "hospital";
 const password = "123";
 
 class LoginScreen extends Component {
@@ -24,6 +25,8 @@ class LoginScreen extends Component {
             return this.props.navigation.navigate('Police Home Page');
         }   else if(this.state.email == AmbulanceEmail && this.state.password == password)  {
             return this.props.navigation.navigate('Ambulance Home Page');
+        }   else if(this.state.email == HospitalEmail && this.state.password == password)   {
+            return this.props.navigation.navigate('Hospital Home Page');
         }   else {
             this.setState({
                 overlayVisible: true

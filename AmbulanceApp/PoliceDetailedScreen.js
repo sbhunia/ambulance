@@ -14,8 +14,7 @@ class PoliceDetailedScreen extends Component {
     render() {
         return (
             <ScrollView>
-                <Text style={styles.statusBar}>Status: {this.props.route.params.statusBar
-                }</Text>
+                <Text style={styles.statusBar}>Status: {this.props.route.params.statusBar}</Text>
                 <Card>
                     <Card.Title style={styles.sectionTitle}>Patient Info</Card.Title>
                     <Card.Divider />
@@ -104,4 +103,4 @@ const styles = StyleSheet.create({
     }
 });
 
-export default PoliceDetailedScreen
+export default PoliceDetailedScreen;

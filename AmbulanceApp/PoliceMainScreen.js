@@ -27,7 +27,9 @@ const DATA = [
     },
     {
         id: 'Patient 4',
-        title: 'First Item',
+        location: 'Indianapolis, IN',
+        injuryType: 'COVID',
+        severity: 'Low'
     }
 ];
 

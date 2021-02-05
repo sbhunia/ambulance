@@ -9,6 +9,8 @@ import PoliceMainScreen from './PoliceMainScreen';
 import PoliceDetailedScreen from './PoliceDetailedScreen.js';
 import AmbulanceMainScreen from './AmbulanceMainScreen.js';
 import AmbulanceDetailedScreen from './AmbulanceDetailedScreen.js';
+import HospitalMainScreen from './HospitalMainScreen.js';
+import HospitalDetailedScreen from './HospitalDetailedScreen.js';
 
 const Stack = createStackNavigator();
 
@@ -21,10 +23,12 @@ function App() {
         <NavigationContainer>
             <Stack.Navigator>
                 <Stack.Screen name="Login Page" component={LoginScreen} />
-                <Stack.Screen name="Police Home Page" component={PoliceMainScreen} options={{ headerLeft: () => <LogoTitle />}}/>
+                <Stack.Screen name="Police Home Page" component={PoliceMainScreen}/>
                 <Stack.Screen name="Police Detailed Page" component={PoliceDetailedScreen} />
-                <Stack.Screen name="Ambulance Home Page" component={AmbulanceMainScreen} options={{headerLeft: () => <LogoTitle />}}/>
+                <Stack.Screen name="Ambulance Home Page" component={AmbulanceMainScreen}/>
                 <Stack.Screen name="Ambulance Detailed Page" component={AmbulanceDetailedScreen} />
+                <Stack.Screen name="Hospital Home Page" component={HospitalMainScreen}/>
+                <Stack.Screen name="Hospital Detailed Page" component={HospitalDetailedScreen} />
             </Stack.Navigator>
         </NavigationContainer>
     );

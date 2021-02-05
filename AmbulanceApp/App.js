@@ -4,9 +4,11 @@ import * as React from 'react';
 import { Image } from 'react-native';
 import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
-import PoliceLoginScreen from './PoliceLoginScreen.js';
+import LoginScreen from './LoginScreen.js';
 import PoliceMainScreen from './PoliceMainScreen';
 import PoliceDetailedScreen from './PoliceDetailedScreen.js';
+import AmbulanceMainScreen from './AmbulanceMainScreen.js';
+import AmbulanceDetailedScreen from './AmbulanceDetailedScreen.js';
 
 const Stack = createStackNavigator();
 
@@ -18,9 +20,11 @@ function App() {
     return (
         <NavigationContainer>
             <Stack.Navigator>
-                <Stack.Screen name="Police Login Page" component={PoliceLoginScreen} />
+                <Stack.Screen name="Login Page" component={LoginScreen} />
                 <Stack.Screen name="Police Home Page" component={PoliceMainScreen} options={{ headerLeft: () => <LogoTitle />}}/>
                 <Stack.Screen name="Police Detailed Page" component={PoliceDetailedScreen} />
+                <Stack.Screen name="Ambulance Home Page" component={AmbulanceMainScreen} options={{headerLeft: () => <LogoTitle />}}/>
+                <Stack.Screen name="Ambulance Detailed Page" component={AmbulanceDetailedScreen} />
             </Stack.Navigator>
         </NavigationContainer>
     );

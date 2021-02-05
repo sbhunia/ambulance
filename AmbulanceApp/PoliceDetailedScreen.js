@@ -14,17 +14,18 @@ class PoliceDetailedScreen extends Component {
     render() {
         return (
             <ScrollView>
-                <Text style={styles.statusBar}>Status: {this.props.route.params.id}</Text>
+                <Text style={styles.statusBar}>Status: {this.props.route.params.statusBar
+                }</Text>
                 <Card>
                     <Card.Title style={styles.sectionTitle}>Patient Info</Card.Title>
                     <Card.Divider />
 
                     <ListItem>
-                        <Text>Name: Patient 1</Text>
+                        <Text>Name: {this.props.route.params.id}</Text>
                     </ListItem>
 
                     <ListItem>
-                        <Text>Location: Oxford, Ohio</Text>
+                        <Text>Location: {this.props.route.params.location}</Text>
                     </ListItem>
 
                     <ListItem>
@@ -32,11 +33,11 @@ class PoliceDetailedScreen extends Component {
                     </ListItem>
 
                     <ListItem>
-                        <Text>Injury Type: Bones Break</Text>
+                        <Text>Injury Type: {this.props.route.params.injuryType}</Text>
                     </ListItem>
 
                     <ListItem>
-                        <Text>Injury Level: Severe</Text>
+                        <Text>Injury Level: {this.props.route.params.injuryLevel}</Text>
                     </ListItem>
                 </Card>
 

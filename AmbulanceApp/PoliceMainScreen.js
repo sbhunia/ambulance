@@ -9,26 +9,24 @@ const Stack = createStackNavigator();
 const DATA = [
     {
         id: 'Patient 1',
-        title: 'First Item',
+        location: 'Oxford, OH',
+        injuryType: 'Bone Break',
+        severity: 'Severe'
     },
     {
         id: 'Patient 2',
-        title: 'First Item',
+        location: 'New York, NY',
+        injuryType: 'Heart Attack',
+        severity: 'Extremely Severe'
     },
     {
         id: 'Patient 3',
-        title: 'First Item',
+        location: 'Grands Rapids, MI',
+        injuryType: 'Headache',
+        severity: 'Low'
     },
     {
         id: 'Patient 4',
-        title: 'First Item',
-    },
-    {
-        id: 'Patient 5',
-        title: 'First Item',
-    },
-    {
-        id: 'Patient 6',
         title: 'First Item',
     }
 ];
@@ -55,7 +53,9 @@ class PoliceMainScreen extends React.Component {
                         <Card.Title>OPEN BID</Card.Title>
                         <Card.Divider />
                         {DATA.map((item, index) => (
-                        <ListItem key={index} bottomDivider onPress={() => this.props.navigation.navigate('Police Detailed Page', { id: item.id })} >
+                        <ListItem key={index} bottomDivider onPress={
+                            () => this.props.navigation.navigate('Police Detailed Page', { id: item.id, location: item.location, injuryType: item.injuryType, injuryLevel: item.severity, status: "Awaiting"}
+                        )} >
                             <Icon
                                 name='user'
                                 type='evilicon'
@@ -72,7 +72,9 @@ class PoliceMainScreen extends React.Component {
                         <Card.Title>ACCEPTED BID</Card.Title>
                         <Card.Divider />
                         {DATA.map((item, index) => (
-                        <ListItem key={index} bottomDivider onPress={() => this.props.navigation.navigate('Police Detailed Page', { id: item.id })}>
+                        <ListItem key={index} bottomDivider onPress={
+                            () => this.props.navigation.navigate('Police Detailed Page', { id: item.id, location: item.location, injuryType: item.injuryType, injuryLevel: item.severity, status: "Transporting" }
+                        )}>
                             <Icon
                                 name='user'
                                 type='evilicon'
@@ -89,7 +91,9 @@ class PoliceMainScreen extends React.Component {
                         <Card.Title>COMPLETED BID</Card.Title>
                         <Card.Divider />
                         {DATA.map((item, index) => (
-                        <ListItem key={index} bottomDivider onPress={() => this.props.navigation.navigate('Police Detailed Page', { id: item.id })}>
+                        <ListItem key={index} bottomDivider onPress={
+                            () => this.props.navigation.navigate('Police Detailed Page', {id: item.id, location: item.location, injuryType: item.injuryType, injuryLevel: item.severity, status: "Completed" }
+                        )}>
                             <Icon
                                 name='user'
                                 type='evilicon'

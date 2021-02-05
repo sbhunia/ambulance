@@ -5,10 +5,11 @@ import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
 import { ScrollView } from 'react-native-gesture-handler';
 
-const email = "khoa";
+const PoliceEmail = "police";
+const AmbulanceEmail = "ambulance";
 const password = "123";
 
-class PoliceLoginScreen extends Component {
+class LoginScreen extends Component {
     constructor(props) {
         super(props);
         this.state = {
@@ -19,9 +20,11 @@ class PoliceLoginScreen extends Component {
     }
 
     handleLogin = () => {
-        if (this.state.email == email && this.state.password == password) {
+        if (this.state.email == PoliceEmail && this.state.password == password) {
             return this.props.navigation.navigate('Police Home Page');
-        } else {
+        }   else if(this.state.email == AmbulanceEmail && this.state.password == password)  {
+            return this.props.navigation.navigate('Ambulance Home Page');
+        }   else {
             this.setState({
                 overlayVisible: true
             })
@@ -66,10 +69,6 @@ class PoliceLoginScreen extends Component {
                         />
                     </Card>
                 </ScrollView>
-                <View>
-                    <Image source={require('./Logo.jpg')} alt="Logo" style={styles.image} />
-                    <Text>Made by Thomas Nguyen</Text>
-                </View>
             </View>
         )
     }
@@ -83,4 +82,4 @@ const styles = StyleSheet.create({
     }
 });
 
-export default PoliceLoginScreen
+export default LoginScreen

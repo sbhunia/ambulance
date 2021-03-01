@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="9cd95b7e-c78a-4f1e-b71c-e18b4ed29a86" name="Default Changelist" comment="" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="ProjectId" id="1ndOp5Fz77kvysJqjKzamOpq3Jr" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="android.sdk.path" value="$USER_HOME$/AppData/Local/Android/Sdk" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/AmbulanceApp/migrations" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\sg701\BlockchainResearch\Native\ambulance-thomas\AmbulanceApp\migrations" />
+      <recent name="C:\Users\sg701\BlockchainResearch\Native\ambulance-thomas\AmbulanceApp\contracts" />
+    </key>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="9cd95b7e-c78a-4f1e-b71c-e18b4ed29a86" name="Default Changelist" comment="" />
+      <created>1611716680517</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1611716680517</updated>
+    </task>
+    <servers />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="795" y="454" key="FileChooserDialogImpl" timestamp="1611716742797">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="795" y="454" key="FileChooserDialogImpl/-1600.0.1600.860/0.0.1920.1040@0.0.1920.1040" timestamp="1611716742797" />
+  </component>
+</project>

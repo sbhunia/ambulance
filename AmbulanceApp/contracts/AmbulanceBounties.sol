@@ -249,14 +249,14 @@ contract AmbulanceBounties {
         policeStations[police] = false;
     }
     
-    // Allows the admin to add verified police stations
+    // Allows the admin to add verified hospitals
     function addHospital (address hospital) public {
         require(msg.sender == admin);
         require(hospitals[hospital] != true);
         hospitals[hospital] = true;
     }
     
-    // Allows the admin to remove verified police stations
+    // Allows the admin to remove verified hospitals
     function removeHospital (address hospital) public {
         require(msg.sender == admin);
         require(hospitals[hospital] != false);

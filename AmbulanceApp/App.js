@@ -11,6 +11,7 @@ import AmbulanceMainScreen from './AmbulanceMainScreen.js';
 import AmbulanceDetailedScreen from './AmbulanceDetailedScreen.js';
 import HospitalMainScreen from './HospitalMainScreen.js';
 import HospitalDetailedScreen from './HospitalDetailedScreen.js';
+import AdminMainScreen from './AdminMainScreen.js';
 
 const Stack = createStackNavigator();
 
@@ -29,6 +30,7 @@ function App() {
                 <Stack.Screen name="Ambulance Detailed Page" component={AmbulanceDetailedScreen} />
                 <Stack.Screen name="Hospital Home Page" component={HospitalMainScreen}/>
                 <Stack.Screen name="Hospital Detailed Page" component={HospitalDetailedScreen} />
+                <Stack.Screen name="Admin Home Page" component={AdminMainScreen} />
             </Stack.Navigator>
         </NavigationContainer>
     );

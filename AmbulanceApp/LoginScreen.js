@@ -1,13 +1,12 @@
 import React, { Component } from 'react';
-import { Text, View, Image, StyleSheet } from 'react-native';
+import { Text, View, StyleSheet } from 'react-native';
 import { Input, Button, Overlay, Card } from 'react-native-elements';
-import { NavigationContainer } from '@react-navigation/native';
-import { createStackNavigator } from '@react-navigation/stack';
 import { ScrollView } from 'react-native-gesture-handler';
 
 const PoliceEmail = "police";
 const AmbulanceEmail = "ambulance";
 const HospitalEmail = "hospital";
+const AdminEmail = "admin";
 const password = "123";
 
 class LoginScreen extends Component {
@@ -27,6 +26,8 @@ class LoginScreen extends Component {
             return this.props.navigation.navigate('Ambulance Home Page');
         }   else if(this.state.email == HospitalEmail && this.state.password == password)   {
             return this.props.navigation.navigate('Hospital Home Page');
+        }   else if (this.state.email == AdminEmail && this.state.password == password) {
+            return this.props.navigation.navigate('Admin Home Page');
         }   else {
             this.setState({
                 overlayVisible: true

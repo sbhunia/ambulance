@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
-import { Text, ScrollView, View, StyleSheet, SafeAreaView } from 'react-native';
+import { Text, ScrollView, View, StyleSheet} from 'react-native';
 import { ListItem, Card, Input, Button} from 'react-native-elements';
-import DatePicker from 'react-native-date-picker'
 
 class AmbulanceDetailedScreen extends Component {
     constructor(props) {

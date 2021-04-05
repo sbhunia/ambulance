@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { Text, ScrollView, View, StyleSheet, SafeAreaView } from 'react-native';
-import { Card, ListItem, Icon, Button } from 'react-native-elements';
+import { Card, ListItem, Icon} from 'react-native-elements';
 import { createStackNavigator } from '@react-navigation/stack';
 
 const Stack = createStackNavigator();
@@ -32,7 +32,7 @@ const DATA = [
     }
 ];
 
-class PoliceMainScreen extends React.Component {
+class PoliceMainScreen extends Component {
     constructor(props) {
         super(props);
     }

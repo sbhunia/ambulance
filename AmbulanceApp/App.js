@@ -12,6 +12,10 @@ import AmbulanceDetailedScreen from './AmbulanceDetailedScreen.js';
 import HospitalMainScreen from './HospitalMainScreen.js';
 import HospitalDetailedScreen from './HospitalDetailedScreen.js';
 import AdminMainScreen from './AdminMainScreen.js';
+import ManageAmbulance from './ManageAmbulance';
+import ManagePolice from './ManagePolice';
+import ManageHospital from './ManageHospitals';
+
 
 const Stack = createStackNavigator();
 
@@ -31,6 +35,11 @@ function App() {
                 <Stack.Screen name="Hospital Home Page" component={HospitalMainScreen}/>
                 <Stack.Screen name="Hospital Detailed Page" component={HospitalDetailedScreen} />
                 <Stack.Screen name="Admin Home Page" component={AdminMainScreen} />
+                <Stack.Screen name="Manage Hospital Page" component={ManageHospital} />
+                <Stack.Screen name="Manage Police Page" component={ManagePolice} />
+                <Stack.Screen name="Manage Ambulance Page" component={ManageAmbulance}/>
+
+
             </Stack.Navigator>
         </NavigationContainer>
     );

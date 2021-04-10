@@ -1,59 +1,44 @@
 import React, { Component } from 'react';
 import { Text, ScrollView, StyleSheet } from 'react-native';
 import { Card, ListItem, Button } from 'react-native-elements';
+import { SimpleContract } from './SolidityHandler'
+
 
 class AdminMainScreen extends Component {
     constructor(props) {
         super(props);
     }
-
     render() {
+
         return (
             <ScrollView>
                 <Card>
-                    <Card.Title style={styles.sectionTitle}>Patient List</Card.Title>
+                    <Card.Title style={styles.sectionTitle}>Welcome Administrator</Card.Title>
                     <Card.Divider />
                     <ListItem>
-                        <Text>Patient1</Text>
-                        <Button title='Remove'></Button>
+
                     </ListItem>
 
-                    <ListItem>
-                        <Text>Patient1</Text>
-                        <Button title='Remove'></Button>
-                    </ListItem>
                 </Card>
-
                 <Card>
-                    <Card.Title style={styles.sectionTitle}>Ambulance List</Card.Title>
+                    <Card.Title style={styles.sectionTitle}>Manage Hospitals, Police, and Ambulances</Card.Title>
                     <Card.Divider />
                     <ListItem>
-                        <Text>Ambulance 1</Text>
-                        <Button title='Remove'></Button>
+                        <Button title='Manage Ambulances'
+                            onPress={() => this.props.navigation.navigate('Manage Ambulance Page')}>
+                        </Button>
                     </ListItem>
-
                     <ListItem>
-                        <Text>Ambulance 2</Text>
-                        <Button title='Remove'></Button>
+                        <Button title='Manage Hospitals'
+                            onPress={() => this.props.navigation.navigate('Manage Hospital Page')}>
+                        </Button>
                     </ListItem>
-
+                    <ListItem>
+                        <Button title='Manage Police'
+                            onPress={() => this.props.navigation.navigate('Manage Police Page')}>
+                        </Button>
+                    </ListItem>
                 </Card>
-
-                <Card>
-                    <Card.Title style={styles.sectionTitle}>Hospital List</Card.Title>
-                    <Card.Divider />
-                    <ListItem>
-                        <Text>Hospital 1</Text>
-                        <Button title='Remove'></Button>
-                    </ListItem>
-
-                    <ListItem>
-                        <Text>Hospital 1</Text>
-                        <Button title='Remove'></Button>
-                    </ListItem>
-
-                </Card>
-
             </ScrollView>
         )
     }
@@ -70,3 +55,4 @@ const styles = StyleSheet.create({
 });
 
 export default AdminMainScreen;
+

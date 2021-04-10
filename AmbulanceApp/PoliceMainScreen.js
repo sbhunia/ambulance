@@ -3,6 +3,11 @@ import { Text, ScrollView, View, StyleSheet, SafeAreaView } from 'react-native';
 import { Card, ListItem, Icon, Button } from 'react-native-elements';
 import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
+import { ambulanceAbi } from './abi/abis';
+const web3 = new Web3(Web3.givenProvider);
+const contractAddr = '0x3F51Fd2c1a6faD59A413A529E1e9f342f39f2d75';
+const SimpleContract = new web3.eth.Contract(ambulanceAbi, contractAddr);
+
 
 const Stack = createStackNavigator();
 
@@ -32,6 +37,10 @@ const DATA = [
         severity: 'Low'
     }
 ];
+postBountyButton = () => {
+    const { TextInputValue } = this.state;
+    SimpleContract.methods.postBounty(memoryHash, timeLimit, memoryLocation, allowedHospitalsList, penalty).send();
+}
 
 class PoliceMainScreen extends React.Component {
     constructor(props) {
@@ -50,6 +59,11 @@ class PoliceMainScreen extends React.Component {
         return (
             <SafeAreaView style={styles.container}>
                 <ScrollView>
+                    <Card style={styles.card}>
+                        <Card.Title>POST BID</Card.Title>
+                        <Card.Divider />
+                        
+                    </Card>
 
                     <Card style={styles.card}>
                         <Card.Title>OPEN BID</Card.Title>

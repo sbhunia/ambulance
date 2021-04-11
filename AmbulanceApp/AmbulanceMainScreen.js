@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import { Text, ScrollView, View, StyleSheet, SafeAreaView } from 'react-native';
-import { Card, ListItem, Icon, Button } from 'react-native-elements';
-import { NavigationContainer } from '@react-navigation/native';
+import { Card, ListItem, Icon } from 'react-native-elements';
 import { createStackNavigator } from '@react-navigation/stack';
 
 const Stack = createStackNavigator();
@@ -33,7 +32,7 @@ const DATA = [
     }
 ];
 
-class AmbulanceMainScreen extends React.Component {
+class AmbulanceMainScreen extends Component {
     constructor(props) {
         super(props);
     }
@@ -55,21 +54,21 @@ class AmbulanceMainScreen extends React.Component {
                         <Card.Title>AVAILABLE BIDS</Card.Title>
                         <Card.Divider />
                         {DATA.map((item, index) => (
-                        <ListItem key={index} bottomDivider onPress={() => this.props.navigation.navigate('Ambulance Detailed Page', { id: item.id })} >
-                            <Icon
-                                name='user'
-                                type='evilicon'
-                                size={50}
-                            />
-                            <ListItem.Content>
-                                <ListItem.Title>{item.id}</ListItem.Title>
-                            </ListItem.Content>
-                        </ListItem>
-                    ))}
+                            <ListItem key={index} bottomDivider onPress={() => this.props.navigation.navigate('Ambulance Detailed Page', { id: item.id })} >
+                                <Icon
+                                    name='user'
+                                    type='evilicon'
+                                    size={50}
+                                />
+                                <ListItem.Content>
+                                    <ListItem.Title>{item.id}</ListItem.Title>
+                                </ListItem.Content>
+                            </ListItem>
+                        ))}
                     </Card>
 
-                    
-                    
+
+
                 </ScrollView>
             </SafeAreaView>
         );
@@ -85,7 +84,7 @@ const styles = StyleSheet.create({
         fontWeight: "bold",
         textAlign: "center"
     },
-    card:   {
+    card: {
         width: '100%'
     }
 });

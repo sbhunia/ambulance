@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
-import { Text, ScrollView, View, StyleSheet, SafeAreaView } from 'react-native';
-import { ListItem, Card, Input, Button} from 'react-native-elements';
-import DatePicker from 'react-native-date-picker'
+import { Text, ScrollView, StyleSheet } from 'react-native';
+import { ListItem, Card, Button } from 'react-native-elements';
 
 class HospitalDetailedScreen extends Component {
     constructor(props) {
@@ -11,7 +10,7 @@ class HospitalDetailedScreen extends Component {
         }
     }
 
-    handleSubmit = ()  =>   {
+    handleSubmit = () => {
         this.setState({
             confirmButtonStatus: true
         })

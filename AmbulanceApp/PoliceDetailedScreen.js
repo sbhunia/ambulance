@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
-import { Text, ScrollView, View, StyleSheet, SafeAreaView } from 'react-native';
-import { ListItem, Card, Input, Button} from 'react-native-elements';
+import { Text, ScrollView, View, StyleSheet } from 'react-native';
+import { ListItem, Card, Input, Button } from 'react-native-elements';
 import DatePicker from 'react-native-date-picker'
 
 class PoliceDetailedScreen extends Component {
@@ -67,7 +67,7 @@ class PoliceDetailedScreen extends Component {
                     </View>
                 </Card>
 
-                <Button title="Submit"/>
+                <Button title="Submit" />
 
                 <Card>
                     <Card.Title style={styles.sectionTitle}>Bidding Info</Card.Title>
@@ -76,15 +76,15 @@ class PoliceDetailedScreen extends Component {
                     <Text>Status: Completed</Text>
 
                     <View>
-                        <Button title="Ambulance 1"/>
+                        <Button title="Ambulance 1" />
                     </View>
 
                     <View>
-                        <Button title="Ambulance 2"/>
+                        <Button title="Ambulance 2" />
                     </View>
 
                     <View>
-                        <Button title="Ambulance 3"/>
+                        <Button title="Ambulance 3" />
                     </View>
                 </Card>
 

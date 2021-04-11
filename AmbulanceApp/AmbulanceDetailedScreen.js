@@ -1,14 +1,10 @@
 import React, { Component } from 'react';
-import { Text, ScrollView, View, StyleSheet, SafeAreaView } from 'react-native';
-import { ListItem, Card, Input, Button} from 'react-native-elements';
-import DatePicker from 'react-native-date-picker'
+import { Text, ScrollView, View, StyleSheet } from 'react-native';
+import { ListItem, Card, Input, Button } from 'react-native-elements';
 
 class AmbulanceDetailedScreen extends Component {
     constructor(props) {
         super(props);
-        this.state = {
-            
-        }
     }
 
     render() {
@@ -44,25 +40,25 @@ class AmbulanceDetailedScreen extends Component {
                     <Card.Divider />
 
                     <View>
-                        <Text style = {styles.elementTitle}>Police Bidding Amount</Text>
-                        <Text style = {styles.elementBody}>
+                        <Text style={styles.elementTitle}>Police Bidding Amount</Text>
+                        <Text style={styles.elementBody}>
                             2000 $
                         </Text>
 
-                        <Text style = {styles.elementTitle}>Penalty Amount</Text>
-                        <Text style = {styles.elementBody}>
+                        <Text style={styles.elementTitle}>Penalty Amount</Text>
+                        <Text style={styles.elementBody}>
                             300 $
                         </Text>
 
-                        <Text style = {styles.elementTitle}>Expiration Time</Text>
-                        <Text style = {styles.elementBody}>
+                        <Text style={styles.elementTitle}>Expiration Time</Text>
+                        <Text style={styles.elementBody}>
                             2hr: 20mins: 10s
                         </Text>
                     </View>
 
 
                     <View>
-                        <Text  style = {styles.elementTitle}>Enter Your Price</Text>
+                        <Text style={styles.elementTitle}>Enter Your Price</Text>
                         <Input
                             placeholder='Input your price'
                             leftIcon={{ type: 'font-awesome', name: 'dollar' }}
@@ -70,7 +66,7 @@ class AmbulanceDetailedScreen extends Component {
                     </View>
                 </Card>
 
-                <Button title="Submit"/>
+                <Button title="Submit" />
 
             </ScrollView>
         )
@@ -80,12 +76,12 @@ class AmbulanceDetailedScreen extends Component {
 const styles = StyleSheet.create({
     sectionTitle: {
         fontSize: 20
-    }, 
+    },
     elementTitle: {
         fontSize: 15,
         textAlign: "center"
     },
-    elementBody:    {
+    elementBody: {
         marginBottom: 5,
         fontSize: 15,
         textAlign: "center"

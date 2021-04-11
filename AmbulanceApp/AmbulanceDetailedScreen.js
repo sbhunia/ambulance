@@ -5,9 +5,6 @@ import { ListItem, Card, Input, Button} from 'react-native-elements';
 class AmbulanceDetailedScreen extends Component {
     constructor(props) {
         super(props);
-        this.state = {
-            
-        }
     }
 
     render() {

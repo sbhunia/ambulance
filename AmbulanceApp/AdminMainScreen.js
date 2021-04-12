@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { Text, ScrollView, StyleSheet } from 'react-native';
 import { Card, ListItem, Button, Overlay, Input, Divider } from 'react-native-elements';
+import { addAmbulance, removeAmbulance, addHospital, removeHospital, addPolice, removePolice } from './SolididityHandler.js';
 
 // const PATIENTLIST = [{ name: "Patient 1" }, { name: "Patient 2" }, { name: "Patient 3" }]
 // const AMBULANCELIST = [{ name: "Ambulance 1" }, { name: "Ambulance 2" }, { name: "Ambulance 3" }]
@@ -47,7 +48,6 @@ class AdminMainScreen extends Component {
     handleSubmit = () => {
         console.log(typeof this.state.currentList);
         console.log(this.state.currentList == "Patient");
-
         if (this.state.currentList == "Patient")  {
             let oldList = this.state.PATIENTLIST;
             oldList.push({name: this.state.name});

@@ -1,10 +1,7 @@
 import React, { Component } from 'react';
 import { Text, ScrollView, StyleSheet } from 'react-native';
-import { Card, ListItem, Button, Overlay, Input, Divider } from 'react-native-elements';
+import { Card, ListItem, Button, Overlay, Input, Divider} from 'react-native-elements';
 
-// const PATIENTLIST = [{ name: "Patient 1" }, { name: "Patient 2" }, { name: "Patient 3" }]
-// const AMBULANCELIST = [{ name: "Ambulance 1" }, { name: "Ambulance 2" }, { name: "Ambulance 3" }]
-// const HOSPITALLIST = [{ name: "Hospital 1" }, { name: "Hospital 2" }, { name: "Hospital 3" }]
 
 class AdminMainScreen extends Component {
     constructor(props) {
@@ -14,15 +11,16 @@ class AdminMainScreen extends Component {
             ID: "",
             name: "",
             currentList: "Patient",
-            PATIENTLIST: [{ name: "Patient 1" }, { name: "Patient 2" }, { name: "Patient 3" }],
-            AMBULANCELIST: [{ name: "Ambulance 1" }, { name: "Ambulance 2" }, { name: "Ambulance 3" }],
-            HOSPITALLIST: [{ name: "Hospital 1" }, { name: "Hospital 2" }, { name: "Hospital 3" }]
+            PATIENTLIST: [{ id: "123456789",  name: "Patient 1" }],
+            AMBULANCELIST: [{ id: "97654321", name: "Ambulance 1" }],
+            HOSPITALLIST: [{ id:"228347982", name: "Hospital 1" }]
         }
         this.handleAdd = this.handleAdd.bind(this);
         this.handleClose = this.handleClose.bind(this);
         this.handleChangeID = this.handleChangeID.bind(this);
         this.handleChangeName = this.handleChangeName.bind(this);
         this.handleSubmit = this.handleSubmit.bind(this);
+        this.handleRemove = this.handleRemove.bind(this);
     }
 
     handleAdd = (list) => {
@@ -31,6 +29,20 @@ class AdminMainScreen extends Component {
             currentList: list.trim()
         });
     }
+
+    handleRemove = (list, id) =>  {
+        if (list == "Patient")  {
+            let newList = this.state.PATIENTLIST.filter((item) => item.id !== id);
+            this.setState({PATIENTLIST: newList});
+        }   else if (list == "Ambulance") {
+            let newList = this.state.AMBULANCELIST.filter((item) => item.id !== id);
+            this.setState({AMBULANCELIST: newList});
+        }   else    {
+            let newList = this.state.HOSPITALLIST.filter((item) => item.id !== id);
+            this.setState({HOSPITALLIST: newList});
+        }
+        console.log(id);
+    }   
 
     handleClose = () => {
         this.setState({ overlayVisible: false });
@@ -45,21 +57,21 @@ class AdminMainScreen extends Component {
     }
 
     handleSubmit = () => {
-        console.log(typeof this.state.currentList);
-        console.log(this.state.currentList == "Patient");
-
         if (this.state.currentList == "Patient")  {
             let oldList = this.state.PATIENTLIST;
-            oldList.push({name: this.state.name});
+            oldList.push({ id: this.state.ID, name: this.state.name });
             this.setState({PATIENTLIST: oldList});
+
         }   else if (this.state.currentList == "Ambulance"){
             let oldList = this.state.AMBULANCELIST;
-            oldList.push({name: this.state.name});
+            oldList.push({ id: this.state.ID, name: this.state.name});
             this.setState({AMBULANCELIST: oldList});
+
         }   else if (this.state.currentList == "Hospital")    {
             let oldList = this.state.HOSPITALLIST;
-            oldList.push({name: this.state.name});
+            oldList.push({ id: this.state.ID, name: this.state.name});
             this.setState({HOSPITALLIST: oldList});
+
         }   else    {
             console.log("Error");
         }
@@ -82,10 +94,14 @@ class AdminMainScreen extends Component {
                     <Card.Title style={styles.sectionTitle}>Patient List</Card.Title>
                     <Card.Divider />
 
-                    {this.state.PATIENTLIST.map((item, index) => (
-                        <ListItem key={index}>
-                            <Text>{item.name}</Text>
-                            <Button title='Remove'></Button>
+                    {this.state.PATIENTLIST.map((item) => (
+                        <ListItem>
+                            <ListItem.Content style={{width: "100%", alignItems: "center"}}>
+                                <ListItem.Title>{item.name}</ListItem.Title>
+                                <ListItem.Subtitle>{item.id}</ListItem.Subtitle>
+                            </ListItem.Content>
+
+                            <Button title='Remove' onPress = {() => this.handleRemove("Patient", item.id)}></Button>
                         </ListItem>
                     ))}
 
@@ -96,10 +112,15 @@ class AdminMainScreen extends Component {
                 <Card>
                     <Card.Title style={styles.sectionTitle}>Ambulance List</Card.Title>
                     <Card.Divider />
+
                     {this.state.AMBULANCELIST.map((item) => (
                         <ListItem>
-                            <Text>{item.name}</Text>
-                            <Button title='Remove'></Button>
+                            <ListItem.Content style={{width: "100%", alignItems: "center"}}>
+                                <ListItem.Title>{item.name}</ListItem.Title>
+                                <ListItem.Subtitle>{item.id}</ListItem.Subtitle>
+                            </ListItem.Content>
+
+                            <Button title='Remove' onPress = {() => this.handleRemove("Ambulance", item.id)}></Button>
                         </ListItem>
                     ))}
 
@@ -110,10 +131,15 @@ class AdminMainScreen extends Component {
                 <Card>
                     <Card.Title style={styles.sectionTitle}>Hospital List</Card.Title>
                     <Card.Divider />
+
                     {this.state.HOSPITALLIST.map((item) => (
                         <ListItem>
-                            <Text>{item.name}</Text>
-                            <Button title='Remove'></Button>
+                            <ListItem.Content style={{width: "100%", alignItems: "center"}}>
+                                <ListItem.Title>{item.name}</ListItem.Title>
+                                <ListItem.Subtitle>{item.id}</ListItem.Subtitle>
+                            </ListItem.Content>
+
+                            <Button title='Remove' onPress = {() => this.handleRemove("Hospital", item.id)}></Button>
                         </ListItem>
                     ))}
 

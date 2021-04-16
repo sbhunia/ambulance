@@ -19,7 +19,6 @@ global.URL = class URL {
 */
 Object.defineProperty(Object, 'assign', {
     value: function assign(target, varArgs) {
-
         'use strict';
         if (target == null) {
             throw new TypeError('Cannot convert undefined or null to object');

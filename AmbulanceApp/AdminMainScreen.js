@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import { Text, ScrollView, StyleSheet } from 'react-native';
-import { Card, ListItem, Button, Overlay, Input, Divider} from 'react-native-elements';
-import {addHospital, addAmbulance, addPolice} from './SolididityHandler.js';
+import { Card, ListItem, Button, Overlay, Input, Divider } from 'react-native-elements';
 
 
 class AdminMainScreen extends Component {
@@ -12,9 +11,9 @@ class AdminMainScreen extends Component {
             ID: "",
             name: "",
             currentList: "Patient",
-            PATIENTLIST: [{ id: "123456789",  name: "Patient 1" }],
+            PATIENTLIST: [{ id: "123456789", name: "Patient 1" }],
             AMBULANCELIST: [{ id: "97654321", name: "Ambulance 1" }],
-            HOSPITALLIST: [{ id:"228347982", name: "Hospital 1" }]
+            HOSPITALLIST: [{ id: "228347982", name: "Hospital 1" }]
         }
         this.handleAdd = this.handleAdd.bind(this);
         this.handleClose = this.handleClose.bind(this);
@@ -25,57 +24,55 @@ class AdminMainScreen extends Component {
     }
 
     handleAdd = (list) => {
-        this.setState({ 
+        this.setState({
             overlayVisible: true,
             currentList: list.trim()
         });
     }
 
-    handleRemove = (list, id) =>  {
-        if (list == "Patient")  {
+    handleRemove = (list, id) => {
+        if (list == "Patient") {
             let newList = this.state.PATIENTLIST.filter((item) => item.id !== id);
-            this.setState({PATIENTLIST: newList});
-        }   else if (list == "Ambulance") {
+            this.setState({ PATIENTLIST: newList });
+        } else if (list == "Ambulance") {
             let newList = this.state.AMBULANCELIST.filter((item) => item.id !== id);
-            this.setState({AMBULANCELIST: newList});
-        }   else    {
+            this.setState({ AMBULANCELIST: newList });
+        } else {
             let newList = this.state.HOSPITALLIST.filter((item) => item.id !== id);
-            this.setState({HOSPITALLIST: newList});
+            this.setState({ HOSPITALLIST: newList });
         }
         console.log(id);
-    }   
+    }
 
     handleClose = () => {
         this.setState({ overlayVisible: false });
     }
 
-    handleChangeID = (id)   =>  {
+    handleChangeID = (id) => {
         this.setState({ ID: id });
     }
 
-    handleChangeName = (name)   =>  {
+    handleChangeName = (name) => {
         this.setState({ name: name });
     }
 
     handleSubmit = () => {
-        if (this.state.currentList == "Patient")  {
+        if (this.state.currentList == "Patient") {
             let oldList = this.state.PATIENTLIST;
             oldList.push({ id: this.state.ID, name: this.state.name });
-            this.setState({PATIENTLIST: oldList});
+            this.setState({ PATIENTLIST: oldList });
 
-        }   else if (this.state.currentList == "Ambulance"){
+        } else if (this.state.currentList == "Ambulance") {
             let oldList = this.state.AMBULANCELIST;
-            oldList.push({ id: this.state.ID, name: this.state.name});
-            this.setState({AMBULANCELIST: oldList});
-            addAmbulance(this.state.id);
+            oldList.push({ id: this.state.ID, name: this.state.name });
+            this.setState({ AMBULANCELIST: oldList });
 
-        }   else if (this.state.currentList == "Hospital")    {
+        } else if (this.state.currentList == "Hospital") {
             let oldList = this.state.HOSPITALLIST;
-            oldList.push({ id: this.state.ID, name: this.state.name});
-            this.setState({HOSPITALLIST: oldList});
-            addHospital(this.state.ID);
+            oldList.push({ id: this.state.ID, name: this.state.name });
+            this.setState({ HOSPITALLIST: oldList });
 
-        }   else    {
+        } else {
             console.log("Error");
         }
         this.handleClose();
@@ -86,9 +83,9 @@ class AdminMainScreen extends Component {
             <ScrollView>
                 <Overlay isVisible={this.state.overlayVisible} style={styles.overLay} fullScreen={true}>
                     <Text>Current List: {this.state.currentList}</Text>
-                    <Input placeholder='ID' onChangeText={(value) => this.handleChangeID(value)}/>
+                    <Input placeholder='ID' onChangeText={(value) => this.handleChangeID(value)} />
                     <Input placeholder='Name' onChangeText={(value) => this.handleChangeName(value)}></Input>
-                    <Button title="Submit" onPress= {() => this.handleSubmit()}></Button>
+                    <Button title="Submit" onPress={() => this.handleSubmit()}></Button>
                     <Divider style={{ backgroundColor: "blue" }} />
                     <Button title="Back" onPress={() => this.handleClose()}></Button>
                 </Overlay>
@@ -99,12 +96,12 @@ class AdminMainScreen extends Component {
 
                     {this.state.PATIENTLIST.map((item) => (
                         <ListItem>
-                            <ListItem.Content style={{width: "100%", alignItems: "center"}}>
+                            <ListItem.Content style={{ width: "100%", alignItems: "center" }}>
                                 <ListItem.Title>{item.name}</ListItem.Title>
                                 <ListItem.Subtitle>{item.id}</ListItem.Subtitle>
                             </ListItem.Content>
 
-                            <Button title='Remove' onPress = {() => this.handleRemove("Patient", item.id)}></Button>
+                            <Button title='Remove' onPress={() => this.handleRemove("Patient", item.id)}></Button>
                         </ListItem>
                     ))}
 
@@ -118,12 +115,12 @@ class AdminMainScreen extends Component {
 
                     {this.state.AMBULANCELIST.map((item) => (
                         <ListItem>
-                            <ListItem.Content style={{width: "100%", alignItems: "center"}}>
+                            <ListItem.Content style={{ width: "100%", alignItems: "center" }}>
                                 <ListItem.Title>{item.name}</ListItem.Title>
                                 <ListItem.Subtitle>{item.id}</ListItem.Subtitle>
                             </ListItem.Content>
 
-                            <Button title='Remove' onPress = {() => this.handleRemove("Ambulance", item.id)}></Button>
+                            <Button title='Remove' onPress={() => this.handleRemove("Ambulance", item.id)}></Button>
                         </ListItem>
                     ))}
 
@@ -137,12 +134,12 @@ class AdminMainScreen extends Component {
 
                     {this.state.HOSPITALLIST.map((item) => (
                         <ListItem>
-                            <ListItem.Content style={{width: "100%", alignItems: "center"}}>
+                            <ListItem.Content style={{ width: "100%", alignItems: "center" }}>
                                 <ListItem.Title>{item.name}</ListItem.Title>
                                 <ListItem.Subtitle>{item.id}</ListItem.Subtitle>
                             </ListItem.Content>
 
-                            <Button title='Remove' onPress = {() => this.handleRemove("Hospital", item.id)}></Button>
+                            <Button title='Remove' onPress={() => this.handleRemove("Hospital", item.id)}></Button>
                         </ListItem>
                     ))}
 

@@ -57,3 +57,7 @@ buck-out/
 
 # CocoaPods
 /ios/Pods/
+/.vs/BhuniaAmbulance/v16/Browse.VC.opendb
+/.vs/BhuniaAmbulance/v16/Browse.VC.db-wal
+/.vs/BhuniaAmbulance/v16/Browse.VC.db-shm
+/.vs/BhuniaAmbulance/v16/Browse.VC.db

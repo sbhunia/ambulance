@@ -1,0 +1,26 @@
+Will need to edit functions in ambulance bounties to get name of ambulance, hospital, etc. 
+as well as to take a hospital name or a police station name, etc. 
+As of right now we do not have that capability but it can be implemented fairly easily using an array of objects in
+the ambulance bounty contract. 
+
+
+
+Admin Page Functions
+AmbulanceBounties.methods.addAmbulance(address).send();
+AmbulanceBounties.methods.removeAmbulance(address).send();
+AmbulanceBounties.methods.addPolice(address).send();
+AmbulanceBounties.methods.removePolice(address).send();
+AmbulanceBounties.methods.addHospital(address).send();
+AmbulanceBounties.methods.removeHospital(address).send();
+
+Hospital Page Functions
+AmbulanceBounties.methods.verifyDelivery(string memory hash).send(); 
+
+Police Page Functions
+AmbulanceBounties.methods.postBounty(string memory hash, uint timeLimit, string memory location, address[] memory allowedHospitals, uint penalty).send;
+AmbulanceBounties.methods.reclaimBounty(string memory hash).send();
+
+
+Ambulance Page Functions
+AmbulanceBounties.methods.bid(string memory hash, bytes32 hashedAmount).send();
+AmbulanceBounties.methods.revealBid(string memory hash, uint bidValue, uint salt, uint index).send();

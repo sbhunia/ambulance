@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { Text, ScrollView, StyleSheet } from 'react-native';
 import { Card, ListItem, Button, Overlay, Input, Divider} from 'react-native-elements';
-import {addHospital, addAmbulance, addPolice} from './SolididityHandler.js';
+import {addHospital, addAmbulance, addPolice} from './SolidityHandler.js';
 
 
 class AdminMainScreen extends Component {

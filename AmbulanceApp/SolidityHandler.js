@@ -1,11 +1,9 @@
-// const Web3 = require('web3');
+
 import { ambulanceAbi } from './abi/abis';
-import Web3 from 'web3'
+import Web3 from 'web3';
 const web3 = new Web3(new Web3.providers.HttpProvider("https://ropsten.infura.io/v3/${27e484dcd9e3efcfd25a83a78777cdf1}"))
-// const web3 = new Web3(Web3.givenProvider);
 const contractAddr = '0x5EE2F8a5c2733d5ac2Ab880E6Cee32328e7a4D80';
 const SimpleContract = new web3.eth.Contract(ambulanceAbi, contractAddr);
-
 
 
 export function addHospital(address) {
